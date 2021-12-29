@@ -18,4 +18,8 @@ public interface IcitasReactivaService {
 
     Mono<citasDTOReactiva> findById(String id);
 
+<<<<<<< HEAD
+=======
+    Mono<citasDTOReactiva> consultarMedicoCita(String id);
+>>>>>>> 781fd1914cccf8a0e805a9f939bd3279af7e50c4
 }
