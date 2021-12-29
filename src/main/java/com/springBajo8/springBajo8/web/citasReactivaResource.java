@@ -50,6 +50,6 @@ public class citasReactivaResource {
 
     @GetMapping("/consultarMedicoCita/{idPaciente}/byidPaciente")
     private Mono<citasDTOReactiva> consultarMedicoCita(@PathVariable("idPaciente") String idPaciente) {
-        return icitasReactivaService.consultarMedicoCita(idPaciente);
+        return icitasReactivaService.findById(idPaciente);
     }
 }

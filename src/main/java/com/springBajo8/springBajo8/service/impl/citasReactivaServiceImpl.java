@@ -71,7 +71,6 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
                 });
     }
 
-<<<<<<< HEAD
     public Flux<citasDTOReactiva> consultarCitaPorFechaYHora(LocalDate fecha, LocalDateTime hora){
         return this.IcitasReactivaRepository
                 .findAll()
@@ -81,13 +80,5 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
                     return save(citas);
                 });
     }
-=======
-    @Override
-    public Mono<citasDTOReactiva> consultarMedicoCita(String id){
-        return IcitasReactivaRepository
-                .findById(id)
-                .flatMap( medico -> consultarMedicoCita(id).thenReturn(medico));
-    }
 
->>>>>>> 781fd1914cccf8a0e805a9f939bd3279af7e50c4
 }
