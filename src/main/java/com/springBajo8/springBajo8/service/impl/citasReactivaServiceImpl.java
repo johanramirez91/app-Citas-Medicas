@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @Service
 public class citasReactivaServiceImpl implements IcitasReactivaService {
 
@@ -64,6 +68,16 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
                 .flatMap(cita ->{
                     cita.setEstadoReservaCita("0");
                     return save(cita);
+                });
+    }
+
+    public Flux<citasDTOReactiva> consultarCitaPorFechaYHora(LocalDate fecha, LocalDateTime hora){
+        return this.IcitasReactivaRepository
+                .findAll()
+                .flatMap(citas -> {
+                    citas.getFechaReservaCita().equals(fecha);
+                    citas.getHoraReservaCita().equals(hora);
+                    return save(citas);
                 });
     }
 }
