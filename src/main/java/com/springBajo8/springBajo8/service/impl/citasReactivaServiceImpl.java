@@ -58,7 +58,10 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
     }
 
     //Service bussines
-    public Mono<citasDTOReactiva> cancelarCita(){
-        
+    public Mono<citasDTOReactiva> cancelarCita(String id){
+        return this.IcitasReactivaRepository
+                .findById(id)
+                .flatMap(cita ->
+                    cancelarCita(id).thenReturn(cita));
     }
 }
