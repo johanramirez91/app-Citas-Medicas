@@ -26,4 +26,5 @@ public interface IcitasReactivaService {
     Mono<citasDTOReactiva> cancelarCita(String id);
 
     Flux<citasDTOReactiva> consultarCitaPorFechaYHora(LocalDate fecha, String hora);
+
 }

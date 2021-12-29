@@ -72,8 +72,7 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
                 });
     }
 
-    @Override
-    public Flux<citasDTOReactiva> consultarCitaPorFechaYHora(LocalDate fecha, String hora){
+    public Flux<citasDTOReactiva> consultarCitaPorFechaYHora(LocalDate fecha, LocalDateTime hora){
         return this.IcitasReactivaRepository
                 .findAll()
                 .flatMap(citas -> {
