@@ -1,6 +1,7 @@
 package com.springBajo8.springBajo8.web;
 
 
+import com.springBajo8.springBajo8.domain.MedicoDto;
 import com.springBajo8.springBajo8.domain.citasDTOReactiva;
 import com.springBajo8.springBajo8.service.IcitasReactivaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,17 +53,18 @@ public class citasReactivaResource {
     }
 
     @GetMapping("/consultarMedicoCita/{idPaciente}/byidPaciente")
-    private Mono<citasDTOReactiva> consultarMedicoCita(@PathVariable("idPaciente") String idPaciente) {
-        return icitasReactivaService.findById(idPaciente);
+    private Mono<MedicoDto> consultarMedicoCita(@PathVariable("idPaciente") String idPaciente) {
+        return icitasReactivaService.consultarMedicoCita(idPaciente);
     }
 
-    @GetMapping("/cancelarCita/{idPaciente}/byidPaciente")
+    @PutMapping("/cancelarCita/{idPaciente}/byidPaciente")
     private Mono<citasDTOReactiva> cancelarCita(@PathVariable("idPaciente") String idPaciente){
         return icitasReactivaService.cancelarCita(idPaciente);
     }
 
     @GetMapping("/consultarCita/{fechaCita}/{hora}")
-    private Flux<citasDTOReactiva> consultarCitaPorFechaYHora(@PathVariable("fechaCita")LocalDate fecha, @PathVariable("hora") String hora){
-        return icitasReactivaService.consultarCitaPorFechaYHora(fecha, hora);
+    private Flux<citasDTOReactiva> consultarCitaPorFechaYHora(@PathVariable("fechaCita")String fecha, @PathVariable("hora") String hora){
+        LocalDate date = LocalDate.parse(fecha);
+        return icitasReactivaService.consultarCitaPorFechaYHora(date, hora);
     }
 }

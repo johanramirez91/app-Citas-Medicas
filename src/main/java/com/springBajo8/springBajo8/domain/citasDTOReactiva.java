@@ -29,6 +29,8 @@ public class citasDTOReactiva {
 
     private String estadoReservaCita;
 
+    private Padecimiento padecimiento;
+
     public String getId() {
         return id;
     }
@@ -99,6 +101,14 @@ public class citasDTOReactiva {
 
     public void setEstadoReservaCita(String estadoReservaCita) {
         this.estadoReservaCita = estadoReservaCita;
+    }
+
+    public Padecimiento getPadecimiento() {
+        return padecimiento;
+    }
+
+    public void setPadecimiento(Padecimiento padecimiento) {
+        this.padecimiento = padecimiento;
     }
 
     //private Date sendedDate = new Date();

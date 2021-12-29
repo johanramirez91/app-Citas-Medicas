@@ -4,6 +4,7 @@ package com.springBajo8.springBajo8.service.impl;
 //import com.yoandypv.reactivestack.messages.repository.MessageRepository;
 //import com.yoandypv.reactivestack.messages.service.MessageService;
 
+import com.springBajo8.springBajo8.domain.MedicoDto;
 import com.springBajo8.springBajo8.domain.citasDTOReactiva;
 import com.springBajo8.springBajo8.repository.IcitasReactivaRepository;
 import com.springBajo8.springBajo8.service.IcitasReactivaService;
@@ -13,7 +14,6 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Service
 public class citasReactivaServiceImpl implements IcitasReactivaService {
@@ -62,10 +62,10 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
 
     //Service bussines
     @Override
-    public Mono<citasDTOReactiva> cancelarCita(String id){
+    public Mono<citasDTOReactiva> cancelarCita(String id) {
         return this.IcitasReactivaRepository
                 .findById(id)
-                .flatMap(cita ->{
+                .flatMap(cita -> {
                     cita.setEstadoReservaCita("0");
                     return save(cita);
                 }).switchIfEmpty(Mono.empty());
@@ -81,9 +81,12 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
     }
 
     @Override
-    public Mono<citasDTOReactiva> consultarMedicoCita(String id){
+    public Mono<MedicoDto> consultarMedicoCita(String id) {
         return IcitasReactivaRepository
                 .findById(id)
-                .flatMap( medico -> consultarMedicoCita(id).thenReturn(medico));
+                .flatMap(medico -> {
+                    return Mono.just(new MedicoDto(medico.getNombreMedico(), medico.getApellidosMedico()));
+                });
     }
+
 }
