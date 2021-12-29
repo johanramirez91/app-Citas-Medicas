@@ -64,4 +64,12 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
                 .flatMap(cita ->
                     cancelarCita(id).thenReturn(cita));
     }
+
+    @Override
+    public Mono<citasDTOReactiva> consultarMedicoCita(String id){
+        return IcitasReactivaRepository
+                .findById(id)
+                .flatMap( medico -> consultarMedicoCita(id).thenReturn(medico));
+    }
+
 }
