@@ -68,20 +68,18 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
                 .flatMap(cita ->{
                     cita.setEstadoReservaCita("0");
                     return save(cita);
-                });
+                }).switchIfEmpty(Mono.empty());
     }
 
     @Override
     public Flux<citasDTOReactiva> consultarCitaPorFechaYHora(LocalDate fecha, String hora) {
         return this.IcitasReactivaRepository
                 .findAll()
-                .flatMap(citas -> {
-                    citas.getFechaReservaCita().equals(fecha);
-                    citas.getHoraReservaCita().equals(hora);
-                    return save(citas);
-                });
+                .filter(citas -> citas.getFechaReservaCita().equals(fecha))
+                .filter(citas -> citas.getHoraReservaCita().equals(hora))
+                .switchIfEmpty(Flux.empty());
     }
-    
+
     @Override
     public Mono<citasDTOReactiva> consultarMedicoCita(String id){
         return IcitasReactivaRepository

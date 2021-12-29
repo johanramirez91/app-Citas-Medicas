@@ -56,14 +56,13 @@ public class citasReactivaResource {
         return icitasReactivaService.findById(idPaciente);
     }
 
-    @GetMapping("/cancelarCita/{idCita}")
-    private Mono<citasDTOReactiva> cancelarCita(@PathVariable("idCita") String idCita){
-        return icitasReactivaService.cancelarCita(idCita);
+    @GetMapping("/cancelarCita/{idPaciente}/byidPaciente")
+    private Mono<citasDTOReactiva> cancelarCita(@PathVariable("idPaciente") String idPaciente){
+        return icitasReactivaService.cancelarCita(idPaciente);
     }
 
-    @GetMapping("/consultarCita/{fechaCita}")
-    private Flux<citasDTOReactiva> consultarCitaPorFechaYHora(@PathVariable("fechaCita")LocalDate fecha, String hora){
+    @GetMapping("/consultarCita/{fechaCita}/{hora}")
+    private Flux<citasDTOReactiva> consultarCitaPorFechaYHora(@PathVariable("fechaCita")LocalDate fecha, @PathVariable("hora") String hora){
         return icitasReactivaService.consultarCitaPorFechaYHora(fecha, hora);
     }
-
 }
