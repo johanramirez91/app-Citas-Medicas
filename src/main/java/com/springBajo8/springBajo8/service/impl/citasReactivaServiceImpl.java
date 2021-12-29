@@ -62,6 +62,7 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
     }
 
     //Service bussines
+    @Override
     public Mono<citasDTOReactiva> cancelarCita(String id){
         return this.IcitasReactivaRepository
                 .findById(id)
@@ -71,8 +72,8 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
                 });
     }
 
-<<<<<<< HEAD
-    public Flux<citasDTOReactiva> consultarCitaPorFechaYHora(LocalDate fecha, LocalDateTime hora){
+    @Override
+    public Flux<citasDTOReactiva> consultarCitaPorFechaYHora(LocalDate fecha, String hora){
         return this.IcitasReactivaRepository
                 .findAll()
                 .flatMap(citas -> {
@@ -81,13 +82,10 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
                     return save(citas);
                 });
     }
-=======
     @Override
     public Mono<citasDTOReactiva> consultarMedicoCita(String id){
         return IcitasReactivaRepository
                 .findById(id)
                 .flatMap( medico -> consultarMedicoCita(id).thenReturn(medico));
     }
-
->>>>>>> 781fd1914cccf8a0e805a9f939bd3279af7e50c4
 }
