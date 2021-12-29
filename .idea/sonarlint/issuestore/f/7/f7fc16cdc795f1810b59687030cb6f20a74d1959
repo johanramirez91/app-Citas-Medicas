@@ -1,0 +1,23 @@
+
+]
+java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(ËøğÜ8É¬Ñ¾à/
+7
+java:S3751"Make this method "public".(ËøğÜ8Ë¬Ñ¾à/
+<
+java:S3751"Make this method "public".(õª®¼úÿÿÿÿ8ï¬Ñ¾à/
+b
+java:S4684&"@Replace this persistent entity with a simple POJO or DTO object.(ìÚ‚Æüÿÿÿÿ8û¬Ñ¾à/
+<
+java:S3751&"Make this method "public".(ìÚ‚Æüÿÿÿÿ8ü¬Ñ¾à/
+<
+java:S3751."Make this method "public".(ï  ùÿÿÿÿ8‚­Ñ¾à/
+<
+java:S37513"Make this method "public".(ÓÃ“ùÿÿÿÿ8…­Ñ¾à/
+7
+java:S37518"Make this method "public".(û¢Ã°8‹­Ñ¾à/
+7
+java:S3751="Make this method "public".(“Ş’8­Ñ¾à/
+7
+java:S3751B"Make this method "public".(àôØ8­Ñ¾à/
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(â—”ğüÿÿÿÿ8š­Ñ¾à/
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ü¬Û8¡­Ñ¾à/

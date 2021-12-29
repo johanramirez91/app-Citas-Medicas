@@ -1,0 +1,7 @@
+
+]	java:S125"<This block of commented-out lines of code should be removed.(¨âŠ…úÿÿÿÿ8¬°Ñ¾à/
+„	java:S116"cRename this field "IcitasReactivaRepository" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ì™ ¶ûÿÿÿÿ8­°Ñ¾à/
+p
+java:S1602W"SRemove useless curly braces around statement and then remove useless return keyword(„ùŒ8Ò°Ñ¾à/
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(è×¥şÿÿÿÿ8Ø°Ñ¾à/
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(„ˆ…ÿ8Ú°Ñ¾à/

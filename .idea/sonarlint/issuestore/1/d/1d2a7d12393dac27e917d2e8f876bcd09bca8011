@@ -1,0 +1,6 @@
+
+]	java:S125r"<This block of commented-out lines of code should be removed.(×Ïôøÿÿÿÿ8À±Ñ¾à/
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8Í±Ñ¾à/
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ìÒşÿÿÿÿ8Ğ±Ñ¾à/
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(·•—öùÿÿÿÿ8Ò±Ñ¾à/

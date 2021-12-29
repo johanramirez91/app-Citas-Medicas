@@ -1,0 +1,8 @@
+com\springBajo8\springBajo8\repository\IcitasReactivaRepository.class
+com\springBajo8\springBajo8\domain\MedicoDto.class
+com\springBajo8\springBajo8\web\citasReactivaResource.class
+com\springBajo8\springBajo8\domain\Padecimiento.class
+com\springBajo8\springBajo8\domain\citasDTOReactiva.class
+com\springBajo8\springBajo8\service\IcitasReactivaService.class
+com\springBajo8\springBajo8\service\impl\citasReactivaServiceImpl.class
+com\springBajo8\springBajo8\SpringBajo8Application.class
