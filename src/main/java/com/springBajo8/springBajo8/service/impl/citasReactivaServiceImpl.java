@@ -14,7 +14,6 @@ import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Service
 public class citasReactivaServiceImpl implements IcitasReactivaService {
@@ -72,7 +71,8 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
                 });
     }
 
-    public Flux<citasDTOReactiva> consultarCitaPorFechaYHora(LocalDate fecha, LocalDateTime hora){
+    @Override
+    public Flux<citasDTOReactiva> consultarCitaPorFechaYHora(LocalDate fecha, String hora) {
         return this.IcitasReactivaRepository
                 .findAll()
                 .flatMap(citas -> {
@@ -81,6 +81,7 @@ public class citasReactivaServiceImpl implements IcitasReactivaService {
                     return save(citas);
                 });
     }
+    
     @Override
     public Mono<citasDTOReactiva> consultarMedicoCita(String id){
         return IcitasReactivaRepository
